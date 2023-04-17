@@ -7,7 +7,7 @@ from selenium.webdriver.firefox.options import Options
 
 
 def imdb_scrapper():
-    url = "https://www.imdb.com/calendar/"#"https://www.imdb.com/movies-coming-soon/?ref_=nv_mv_cs"
+    url = "https://www.imdb.com/calendar"#"https://www.imdb.com/movies-coming-soon/?ref_=nv_mv_cs"
     # page = requests.get(url)
     page = request.urlopen(url)
     soup = BeautifulSoup(page, 'html.parser')

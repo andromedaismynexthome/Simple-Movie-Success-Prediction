@@ -23,13 +23,12 @@
 
             <hr>
 
-            <!-- Preview Image -->
+           
 
             
 
 
-            <hr>
-
+            
             <div class="jumbotron jumbotron-fluid">
                 <div class="container">
                     <h1 class="display-4">Prediction: {{ pr }}</h1>
@@ -60,13 +59,7 @@
                     <th scope="row">Release Year</th>
                     <td>{{ detail.year }}</td>
                 </tr>
-                <tr>
-                    <th scope="row">Stars</th>
-                    <td>{% for star in detail.stars.all %}
-                        <p>{{ star  }}</p>
-                    {% endfor %}</td>
-
-                </tr>
+                
 
                 <tr>
                     <th scope="row">IMDB Meta Score</th>

@@ -44,7 +44,7 @@ class Movies(models.Model):
     imdb_meta = models.IntegerField(blank=True, default=0)
     genres = models.ManyToManyField(Genre)
     stars = models.ManyToManyField(Star)
-    runtime = models.CharField(blank=True, max_length=20)
+    runtime = models.CharField(blank=True, max_length=20,default=0)
     yt_trailer_title = models.CharField(max_length=200, blank=True)
     yt_trailer_url = models.URLField(blank=True)
     yt_trailer_views = models.IntegerField()
