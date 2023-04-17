@@ -1,1 +1,1 @@
-# Simple_Movie_Success_Prediction
+# Simple-Movie-Success-Prediction
