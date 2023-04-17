@@ -6,7 +6,7 @@ from .models import Movies
 class MoviesForm(ModelForm):
     class Meta:
         model = Movies
-        fields = {'name','year','imdb_meta','genres','director','stars','yt_trailer_views','ph_credit','yt_trailer_like'}
+        fields = {'name','year','imdb_meta','genres','runtime','director','stars','yt_trailer_views','ph_credit','yt_trailer_like'}
         labels = {
             'name':'',
             'year':'',
@@ -16,7 +16,7 @@ class MoviesForm(ModelForm):
             'imdb_meta':'Imdb metascore',
             'genres':'select multi',
             'stars':'',
-            #'runtime':'',
+            'runtime':'enter movie runtime',
             #'yt_trailer_title':'',
             #'yt_trailer_url':'',
             'yt_trailer_views':'',
@@ -34,7 +34,7 @@ class MoviesForm(ModelForm):
             'imdb_meta':forms.TextInput(attrs={'class':'form-control','placeholder':'add imdb meta score'}),
             'genres':forms.SelectMultiple(attrs={'class':'form-control','placeholder':'select genre'}),
             'stars':forms.SelectMultiple(attrs={'class':'form-control','placeholder':'add movie star name'}),
-            #'runtime':forms.TextInput(attrs={'class':'form-control','placeholder':'write movie runtime'}),
+            'runtime':forms.TextInput(attrs={'class':'form-control','placeholder':'write movie runtime'}),
             #'yt_trailer_title':forms.TextInput(attrs={'class':'form-control','placeholder':'add youtube movie title'}),
             #'yt_trailer_url':forms.TextInput(attrs={'class':'form-control','placeholder':'add youtube movie embed url'}),
             'yt_trailer_views':forms.TextInput(attrs={'class':'form-control','placeholder':'add youtube movie views'}),
