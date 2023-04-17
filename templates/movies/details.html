@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+
+
+    <div class="row">
+
+        <!-- Post Content Column -->
+        <div class="container">
+
+            <!-- Title -->
+            <h1 class="mt-4">{{ detail.name }}</h1>
+
+            <hr>
+
+            <!-- Genres -->
+
+            {% for genre in detail.genres.all %}
+                <span class="badge badge-info">{{ genre  }} </span>
+            {% endfor %}
+
+            <hr>
+
+            <!-- Preview Image -->
+
+            <div class="text-center">
+                <img class="img-fluid rounded" src="{{ detail.image }}" alt="Responsive image" width="200px" height="200px" >
+            </div>
+
+
+            <hr>
+
+            <div class="jumbotron jumbotron-fluid">
+                <div class="container">
+                    <h1 class="display-4">Prediction: {{ pr }}</h1>
+
+                </div>
+            </div>
+
+
+            <!-- Post Content -->
+            <h2>Movie Information</h2>
+            <hr>
+            <table class="table table-striped">
+                <tbody>
+                <tr>
+                    <th scope="row">Title</th>
+                    <td>{{ detail.name }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Director</th>
+                    <td>{{ detail.director.d_name }}</td>
+
+                </tr>
+                <tr>
+                    <th scope="row">Production House</th>
+                    <td>{{ detail.yt_trailer_uploader }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Runtime</th>
+                    <td>{{ detail.runtime }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Release Year</th>
+                    <td>{{ detail.year }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Stars</th>
+                    <td>{% for star in detail.stars.all %}
+                        <p>{{ star  }}</p>
+                    {% endfor %}</td>
+
+                </tr>
+                <tr>
+                    <th scope="row">Outline</th>
+                    <td>{{ detail.outline}}</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">IMDB Meta Score</th>
+                    <td>
+                        {{ details.imdb_meta }}
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">Links</th>
+                    <td><a href="{{ detail.link }}">IMDB</a>
+                        <a href="{{ detail.yt_trailer_url }}">Youtube</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+            <hr>
+
+         <!-- Sidebar Widgets Column -->
+
+    </div>
+
+            
+
+        </div>
+
+
+
+{% endblock %}

@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load humanize %}
+
+
+
+{% block content %}
+
+
+    <div class="row">
+
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+
+            <!-- Title -->
+            <h1 class="mt-4">{{ actor.s_name }}</h1>
+
+            <hr>
+
+            <!-- Genres -->
+
+            {% for genre in detail.genres.all %}
+                <span class="badge badge-info">{{ genre  }} </span>
+            {% endfor %}
+
+            <hr>
+
+            <!-- Preview Image -->
+
+            <div class="text-center">
+                <img class="img-fluid rounded" src="{{ actor.star_img }}" alt="Responsive image" width="200px" height="200px" >
+            </div>
+
+
+            <hr>
+
+            <!-- Post Content -->
+            <h2>Actors Information</h2>
+            <hr>
+            <table class="table table-striped">
+                <tbody>
+                <tr>
+                    <th scope="row">Name</th>
+                    <td>{{ actor.s_name }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">IMDB Credit</th>
+                    <td>{{ actor.weight }}</td>
+
+                </tr>
+
+                <tr>
+                    <th scope="row">Instagram Followers</th>
+                    <td>{{ actor.insta_followers|intcomma}}</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">Info</th>
+                    <td>{{ actor.about|truncatewords:40}}</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">Links</th>
+                    <td><a href="{{ actor.star_link }}">IMDB</a><hr>
+                        <a href="{{ actor.star_insta }}">Instagram</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+            <hr>
+            
+
+        </div>
+
+
+
+    </div>
+
+{% endblock %}
